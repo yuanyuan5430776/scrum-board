@@ -3,18 +3,19 @@ package com.beauty.board.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 
 @Entity
 @Table(name = "points")
-public class point extends BaseEntity {
+public class Point extends BaseEntity {
 
     @Column(name = "userId")
-    private Integer userId;
+    private int userId;
 
     @Column(name = "storyId")
-    private Integer storyId;
+    private int storyId;
 
     @Column(name = "point")
     @Digits(fraction = 0, integer = 4)
