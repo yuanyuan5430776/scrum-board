@@ -6,14 +6,14 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "users")
-public class User extends BaseEntity {
+@Table(name="stories")
+public class Story extends BaseEntity{
     @Column(name = "name")
     @NotEmpty
     private String name;
 
-    @Column(name = "role")
-    private RoleEnum role;
+    @Column(name = "status")
+    private StatusEnum status;
 
     public String getName() {
         return name;
@@ -23,11 +23,11 @@ public class User extends BaseEntity {
         this.name = name;
     }
 
-    public RoleEnum getRole() {
-        return role;
+    public StatusEnum getStatus() {
+        return status;
     }
 
-    public void setRole(RoleEnum role) {
-        this.role = role;
+    public void setStatus(StatusEnum status) {
+        this.status = status;
     }
 }
