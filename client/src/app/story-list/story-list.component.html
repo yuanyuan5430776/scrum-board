@@ -14,7 +14,7 @@
     <tbody>
       <tr *ngFor="let story of stories">
         <td></td>
-        <td>{{story.name}}</td>
+        <td><a routerLink='/stories/{{story.id}}'>{{story.name}}</a></td>
         <td>{{story.status}}</td>
       </tr>
     </tbody>
