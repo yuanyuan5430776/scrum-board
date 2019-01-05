@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { StoryService } from './shared/story.service';
+import { StoryListComponent } from './story-list/story-list.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StoryListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

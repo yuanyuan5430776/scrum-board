@@ -1,0 +1,22 @@
+<p>
+  story-list works!
+</p>
+
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let story of stories">
+        <td></td>
+        <td>{{story.name}}</td>
+        <td>{{story.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
