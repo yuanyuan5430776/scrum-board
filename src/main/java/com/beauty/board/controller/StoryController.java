@@ -1,19 +1,22 @@
 package com.beauty.board.controller;
 
 import com.beauty.board.dao.StoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import com.beauty.board.model.Story;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.Collection;
+
+@RestController
 public class StoryController {
-    @Autowired
     private StoryRepository storyRepository;
 
-    @GetMapping(path = "/storyList")
-    private String showStory(Model model) {
-        model.addAttribute("story", storyRepository.findAll());
-        return "storyList";
+    public StoryController(StoryRepository storyRepository) {
+        this.storyRepository = storyRepository;
+    }
+
+    @GetMapping("stories")
+    private Collection<Story> getStories() {
+        return storyRepository.findAll();
     }
 }
