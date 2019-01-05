@@ -6,6 +6,13 @@ import { Observable } from 'rxjs/Observable';
   providedIn: 'root'
 })
 export class StoryService {
+  save(story: any): Observable<any> {
+    let result: Observable<Object>;
+
+    result = this.http.post('/stories', story);
+
+    return result;
+  }
 
   constructor(private http: HttpClient) { }
 
